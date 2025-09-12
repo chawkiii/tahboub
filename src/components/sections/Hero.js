@@ -1,5 +1,4 @@
 // src/components/Hero.js
-
 "use client";
 
 import { useState, useEffect } from "react";
@@ -8,6 +7,7 @@ import "../../styles/hero.css";
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
+  const [offsetY, setOffsetY] = useState(0);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -16,11 +16,21 @@ export default function Hero() {
     return () => clearInterval(interval);
   }, []);
 
+  useEffect(() => {
+    const handleScroll = () => setOffsetY(window.scrollY * 0.5); // vitesse réduite
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section
-      className="hero"
-      style={{ backgroundImage: `url(${heroSlides[current].image})` }}
-    >
+    <section className="hero">
+      <div
+        className="hero-bg"
+        style={{
+          backgroundImage: `url(${heroSlides[current].image})`,
+          transform: `translateY(${offsetY}px)`,
+        }}
+      />
       <div className="hero-content">
         <h1>{heroSlides[current].title}</h1>
         <p>{heroSlides[current].text}</p>

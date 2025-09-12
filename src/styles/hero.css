@@ -1,23 +1,32 @@
 .hero {
-  height: calc(100vh - var(--nav-h)*2 - var(--footer-h)); 
-  background: no-repeat center center/cover;
-  background-attachment: fixed; 
+  position: relative;
+  height: calc(100vh - var(--nav-h)*2 - var(--footer-h));
+  overflow: hidden;
   display: flex;
   align-items: center;
   justify-content: center;
   color: var(--light);
   text-align: center;
-  position: relative;
-  transition: background-image 1s ease-in-out;
 }
 
+.hero-bg {
+  position: absolute;
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1s ease-in-out;
+  will-change: transform; /* optimise le scroll */
+}
 
 .hero-content {
-  background: rgba(0, 0, 0, 0.7); 
+  position: relative;
+  z-index: 2;
+  background: rgba(0, 0, 0, 0.7);
   padding: 2rem;
   border-radius: 8px;
   max-width: 800px;
 }
+
 
 .hero h1 {
   font-size: 3rem;
@@ -51,8 +60,7 @@
 /* mobile fix */
 @media (max-width: 768px) {
   .hero {
-  position: relative;
-  overflow: hidden;
+    overflow: hidden;
   }
 
   .hero::before {
