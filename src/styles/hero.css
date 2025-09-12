@@ -51,14 +51,25 @@
 /* mobile fix */
 @media (max-width: 768px) {
   .hero {
-    background-attachment: scroll !important; /* enlève le fixed qui zoom */
-    background-position: top center !important; /* cadrage plus logique sur tel */
-    height: 70vh; /* un peu moins haut sur mobile pour éviter les images coupées */
+  position: relative;
+  overflow: hidden;
   }
+
+  .hero::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: inherit; /* récupère ton background */
+    background-size: cover;
+    background-position: center;
+    
+  }
+
 
   .hero-content {
     padding: 1rem; 
     max-width: 90%; /* mieux centré sur petit écran */
+    z-index: 5;
   }
 
   .hero h1 {
