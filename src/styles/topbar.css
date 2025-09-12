@@ -1,0 +1,27 @@
+/* styles/topbar.css */
+.topbar {
+  height: var(--nav-h);
+  background: var(--secondary);
+  color: white;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 20px;
+  margin-top: var(--nav-h);
+}
+
+.topbar a {
+  margin-right: 15px;
+  color: white;
+  text-decoration: none;
+  border: none;
+}
+
+.topbar select {
+  background: transparent;
+  color: var(--secondary);
+  background: white;
+  border: none;
+  font-weight: bold;
+}

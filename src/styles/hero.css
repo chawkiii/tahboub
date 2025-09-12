@@ -1,0 +1,49 @@
+.hero {
+  height: calc(100vh - var(--nav-h)*2 - var(--footer-h)); 
+  background: no-repeat center center/cover;
+  background-attachment: fixed; 
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--light);
+  text-align: center;
+  position: relative;
+  transition: background-image 1s ease-in-out;
+}
+
+
+.hero-content {
+  background: rgba(0, 0, 0, 0.7); 
+  padding: 2rem;
+  border-radius: 8px;
+  max-width: 800px;
+}
+
+.hero h1 {
+  font-size: 3rem;
+  margin-bottom: 1rem;
+}
+
+.hero p {
+  font-size: 1.25rem;
+}
+
+.hero-dots {
+  margin-top: 1.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #bbb;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.dot.active {
+  background: #fff;
+}

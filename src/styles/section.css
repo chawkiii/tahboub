@@ -1,0 +1,39 @@
+/* src/styles/section.css
+   Styles pour sections et cards produits
+*/
+
+/* -------------------
+   SECTION GÉNÉRIQUE
+------------------- */
+.section {
+  padding: 80px 20px;
+  background: #fff;
+  color: #333;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.section:nth-of-type(even) {
+  background: #f5f5f5;
+}
+
+.section h2 {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  color: var(--secondary);
+}
+
+.section p {
+  font-size: 1.125rem;
+  max-width: 800px;
+  margin: 0 auto;
+  line-height: 1.8;
+}
+
+.section-content {
+  text-align: left;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+

@@ -1,0 +1,30 @@
+.footer {
+  background: #111;
+  color: #eee;
+  z-index: 1000;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: var(--footer-h); 
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto; 
+  padding: 0 1rem; 
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.footer-container p {
+  font-size: 13px;
+  line-height: 1; 
+  margin: 0; 
+}
