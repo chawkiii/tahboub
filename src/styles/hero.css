@@ -51,6 +51,21 @@
 /* mobile fix */
 @media (max-width: 768px) {
   .hero {
-    background-attachment: scroll; /* pas de parallax */
+    background-attachment: scroll !important; /* enlève le fixed qui zoom */
+    background-position: top center !important; /* cadrage plus logique sur tel */
+    height: 70vh; /* un peu moins haut sur mobile pour éviter les images coupées */
+  }
+
+  .hero-content {
+    padding: 1rem; 
+    max-width: 90%; /* mieux centré sur petit écran */
+  }
+
+  .hero h1 {
+    font-size: 2rem; /* adapté au mobile */
+  }
+
+  .hero p {
+    font-size: 1rem;
   }
 }
