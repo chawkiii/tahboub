@@ -1,5 +1,10 @@
 /* globals.css */
 /* -------------------
+   IMPORT FONTS
+------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@600;700&display=swap');
+
+/* -------------------
    RESET DE BASE
 ------------------- */
 * {
@@ -13,7 +18,7 @@ html, body {
 }
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Inter', Arial, Helvetica, sans-serif;
   font-size: 16px;
   line-height: 1.6;
   color: #333;
@@ -33,22 +38,41 @@ body {
 }
 
 /* -------------------
-   LAYOUT
+   TYPOGRAPHIE
 ------------------- */
-main {
-  margin-top: 0; 
-  padding-bottom: var(--footer-h);
-
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Poppins', 'Inter', sans-serif;
+  font-weight: 600;
+  color: var(--dark);
+  line-height: 1.2;
+  margin-bottom: 0.5em;
 }
 
+h1 {
+  font-size: 2.4rem;
+  color: var(--light);
+}
 
-h1, h2, h3 {
-  font-weight: bold;
+h2 {
+  font-size: 2rem;
+}
+
+h3 {
+  font-size: 1.5rem;
 }
 
 p {
   margin-bottom: 16px;
   max-width: 800px;
+  font-weight: 400;
+}
+
+/* -------------------
+   LAYOUT
+------------------- */
+main {
+  margin-top: 0; 
+  padding-bottom: var(--footer-h);
 }
 
 /* -------------------
@@ -57,9 +81,11 @@ p {
 a {
   color: var(--primary);
   text-decoration: none;
+  transition: color 0.2s ease-in-out;
 }
 
 a:hover {
+  color: var(--secondary);
   text-decoration: underline;
 }
 

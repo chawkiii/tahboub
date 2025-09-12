@@ -1,6 +1,4 @@
 // src/data/products.js
-// Updated dataset (images grouped heuristically from /public/products).
-// NOTE: certaines titles/descriptions sont indicatives / à confirmer — ajuste selon tes modèles exacts.
 
 export const productImages = {
   cars: [
@@ -106,7 +104,12 @@ export const productImages = {
     "/products/machines/machine02.png",
     "/products/machines/machine03.png"
   ],
-  raw: ["/products/raw/raw01.jpg", "/products/raw/raw02.jpg"],
+  raw: [
+    "/products/raw/raw01.jpg",
+    "/products/raw/raw02.jpg",
+    "/products/raw/raw03.jpg",
+    "/products/raw/raw04.jpg",
+  ],
   agri: [
     "/products/agri/agri01.jpg",
     "/products/agri/agri02.jpg",
@@ -116,14 +119,18 @@ export const productImages = {
     "/products/agri/agri06.jpg",
     "/products/agri/agri07.jpg",
   ],
-  services: ["/services/ser01.png", "/services/ser02.jpg"]
+  services: [
+    "/services/ser01.png",
+    "/services/ser02.jpg",
+    "/services/ser03.jpg"
+  ]
 };
 
 // --- Liste des produits détaillés (groupés, prêt à l'emploi pour /products) ---
 export const products = [
-  // --- Cars (grouped by filename patterns) ---
+  // --- Cars ---
   {
-    title: "Jetour X70",
+    title: "Jetour",
     images: [
       "/products/cars/carjet01.jpeg",
       "/products/cars/carjet02.jpeg",
@@ -153,12 +160,12 @@ export const products = [
       "/products/cars/carjet34.jpeg",
       "/products/cars/carjet81.jpeg"
     ],
-    description: "SUV chinois (images Jetour regroupées). Vérifier modèle exact si besoin.",
+    description: "SUV Jetour : une gamme moderne alliant confort, performance et design, parfaitement adaptée aux marchés internationaux.",
     category: "cars",
-    href: "/products/cars/jetour-x70"
+    href: "/products/cars/jetour"
   },
   {
-    title: "Peugeot 2008",
+    title: "Peugeot",
     images: [
       "/products/cars/carp200801.jpeg",
       "/products/cars/carp200802.jpeg",
@@ -168,21 +175,13 @@ export const products = [
       "/products/cars/carp200806.jpeg",
       "/products/cars/carp200807.jpeg"
     ],
-    description: "Peugeot 2008 — série d'images groupées (vérifier si toutes appartiennent au même modèle).",
+    description: "Véhicules Peugeot : robustesse, élégance et innovation pour des besoins variés.",
     category: "cars",
-    href: "/products/cars/peugeot-2008"
+    href: "/products/cars/peugeot"
   },
   {
-    title: "Volkswagen T-Roc",
-    images: ["/products/cars/carw05.jpeg", "/products/cars/carw10.jpeg"],
-    description: "T-Roc — aperçu rapide (images principales).",
-    category: "cars",
-    href: "/products/cars/volkswagen-t-roc"
-  },
-  {
-    title: "Volkswagen — autres modèles (à confirmer)",
+    title: "Volkswagen",
     images: [
-      // reste des fichiers carw*
       "/products/cars/carw100.jpeg",
       "/products/cars/carw101.jpeg",
       "/products/cars/carw105.jpeg",
@@ -214,22 +213,18 @@ export const products = [
       "/products/cars/carwg05.jpeg",
       "/products/cars/carwp01.jpeg",
       "/products/cars/carwp02.jpeg",
-      "/products/cars/carwp03.jpeg"
+      "/products/cars/carwp03.jpeg",
+      "/products/cars/carw05.jpeg",
+      "/products/cars/carw10.jpeg",
+      "/products/cars/carsko01.jpeg",
+      "/products/cars/carsko02.jpeg"
     ],
-    description:
-      "Regroupement d'images Volkswagen (noms wg / wp / w / autres). Modèles à identifier précisément si besoin.",
+    description: "Volkswagen : modèles fiables et polyvalents, reconnus mondialement pour leur performance et durabilité.",
     category: "cars",
-    href: "/products/cars/volkswagen-others"
+    href: "/products/cars/volkswagen"
   },
   {
-    title: "Golf 8",
-    images: ["/products/cars/carsko01.jpeg", "/products/cars/carsko02.jpeg"],
-    description: "Compacte allemande (exemples d'images).",
-    category: "cars",
-    href: "/products/cars/golf-8"
-  },
-  {
-    title: "Skoda / autres (à confirmer)",
+    title: "Skoda",
     images: [
       "/products/cars/carsko03.jpeg",
       "/products/cars/carsko04.jpeg",
@@ -243,135 +238,181 @@ export const products = [
       "/products/cars/carsko71.jpeg",
       "/products/cars/carsko88.jpeg"
     ],
-    description: "Images supplémentaires (prefix carsko). Vérifier attribution marque/modèle.",
+    description: "Skoda : véhicules économiques et modernes, conçus pour répondre aux exigences du marché global.",
     category: "cars",
-    href: "/products/cars/skoda-others"
+    href: "/products/cars/skoda"
   },
 
-  // --- Engins (conservés / 2 exemples, complète selon besoin) ---
+  // --- Engins ---
   {
     title: "Mini-pelle hydraulique",
-    images: ["/products/engins/engin01.jpeg"],
-    description: "Engin polyvalent pour le BTP et les petits chantiers.",
+    images: [
+      "/products/engins/engin01.jpeg",
+      "/products/engins/engin03.jpeg",
+      "/products/engins/engin04.jpeg",
+      "/products/engins/engin05.jpeg",
+      "/products/engins/engin06.jpeg",
+      "/products/engins/engin07.jpeg",
+    ],
+    description: "Mini-pelles robustes et maniables, idéales pour les travaux de terrassement et de construction.",
     category: "engins",
     href: "/products/engins/mini-pelle"
   },
   {
     title: "Chargeuse sur pneus",
-    images: ["/products/engins/engin02.jpeg"],
-    description: "Machine robuste pour le transport et le terrassement.",
+    images: [
+      "/products/engins/engin08.jpeg",
+      "/products/engins/engin09.jpeg",
+      "/products/engins/engin10.jpeg",
+      "/products/engins/engin11.jpeg",
+      "/products/engins/engin12.jpeg",
+      "/products/engins/engin13.jpeg"
+    ],
+    description: "Chargeuses puissantes, conçues pour le transport de matériaux et les grands chantiers.",
     category: "engins",
     href: "/products/engins/chargeuse"
   },
-
-  // (tu peux ajouter ici d'autres engins en réutilisant engin03..13)
 
   // --- Machines ---
   {
     title: "Ligne de production textile",
     images: ["/products/machines/machine01.jpg"],
-    description: "Solution clé-en-main pour la confection et l’assemblage textile.",
+    description: "Lignes complètes pour la confection textile, adaptées aux industries de grande échelle.",
     category: "machines",
     href: "/products/machines/textile"
   },
   {
     title: "Presse hydraulique",
     images: ["/products/machines/machine02.png"],
-    description: "Machine de précision pour l’emboutissage et la découpe.",
+    description: "Presse haute performance pour emboutissage, formage et découpe industrielle.",
     category: "machines",
     href: "/products/machines/presse"
+  },
+  {
+    title: "Convoyeur industriel",
+    images: ["/products/machines/machine03.png"],
+    description: "Convoyeurs modulaires pour le transport automatisé de produits et matières.",
+    category: "machines",
+    href: "/products/machines/convoyeur"
   },
 
   // --- Matières premières ---
   {
     title: "Acier laminé",
     images: ["/products/raw/raw01.jpg"],
-    description: "Matériau robuste pour construction et industrie lourde.",
+    description: "Acier de haute qualité, essentiel pour la construction et l’industrie lourde.",
     category: "raw",
     href: "/products/raw/acier"
   },
   {
     title: "Plastique granulé",
     images: ["/products/raw/raw02.jpg"],
-    description: "Matière première pour l’injection et l’extrusion.",
+    description: "Granulés plastiques pour injection et extrusion, utilisés dans divers secteurs industriels.",
     category: "raw",
     href: "/products/raw/plastique"
+  },
+  {
+    title: "Textiles en rouleaux",
+    images: ["/products/raw/raw03.jpg"],
+    description: "Rouleaux textiles variés pour l’habillement, la décoration et l’industrie.",
+    category: "raw",
+    href: "/products/raw/textiles"
+  },
+  {
+    title: "Matériaux composites",
+    images: ["/products/raw/raw04.jpg"],
+    description: "Matériaux avancés, légers et résistants, pour aéronautique et automobile.",
+    category: "raw",
+    href: "/products/raw/composites"
   },
 
   // --- Agriculture ---
   {
-    title: "Serre multichapelle",
-    images: ["/products/agri/agri01.jpg"],
-    description: "Serre moderne pour cultures maraîchères et florales.",
+    title: "Tracteurs agricoles",
+    images: [
+      "/products/agri/agri01.jpg",
+      "/products/agri/agri02.jpg",
+      "/products/agri/agri03.jpg",
+      "/products/agri/agri04.jpg",
+    ],
+    description: "Tracteurs modernes et fiables, adaptés aux travaux agricoles intensifs.",
     category: "agri",
-    href: "/products/agri/serre"
+    href: "/products/agri/tracteurs"
   },
   {
-    title: "Système d’irrigation goutte-à-goutte",
-    images: ["/products/agri/agri02.jpg"],
-    description: "Solution économe en eau pour une irrigation efficace.",
+    title: "Système hydroponique",
+    images: ["/products/agri/agri06.jpg", "/products/agri/agri07.jpg"],
+    description: "Systèmes hydroponiques innovants, permettant une culture économe en eau et en espace.",
     category: "agri",
-    href: "/products/agri/irrigation"
+    href: "/products/agri/hydroponique"
+  },
+  {
+    title: "Serre agricole",
+    images: ["/products/agri/agri05.jpg"],
+    description: "Serres intelligentes et modulaires pour la production agricole moderne.",
+    category: "agri",
+    href: "/products/agri/serres"
   },
 
   // --- Services ---
   {
     title: "Transit & Douane",
     images: ["/services/ser01.png"],
-    description: "Prise en charge complète des formalités douanières.",
+    description: "Gestion complète des formalités douanières et du transit international.",
     category: "services",
     href: "/products/services/transit"
   },
   {
     title: "Logistique internationale",
     images: ["/services/ser02.jpg"],
-    description: "Transport maritime, aérien et terrestre avec suivi.",
+    description: "Solutions de transport maritime, aérien et terrestre avec suivi intégré.",
     category: "services",
     href: "/products/services/logistique"
+  },
+  {
+    title: "Accompagnement export",
+    images: ["/services/ser03.jpg"],
+    description: "Conseil et support pour réussir vos projets à l’international.",
+    category: "services",
+    href: "/products/services/accompagnement"
   }
 ];
 
-// --- Les previews utilisés sur la homepage ---
+// --- Previews pour la homepage ---
 export const productsPreview = [
   {
     title: "Véhicules",
-    icon: "🚗",
-    description: "Voitures neuves ou d'occasion.",
+    description: "Large gamme de voitures neuves et d’occasion pour différents marchés.",
     category: "cars",
     href: "/products#cars"
   },
   {
     title: "Engins de chantier",
-    icon: "🚜",
-    description: "Camions, mini-pelles et engins de chantier ou de transport.",
+    description: "Mini-pelles, chargeuses et engins robustes pour le BTP et l’industrie.",
     category: "engins",
     href: "/products#engins"
   },
   {
     title: "Machines industrielles",
-    icon: "⚙️",
-    description: "Lignes de production, presses, convoyeurs, solutions clé-en-main.",
+    description: "Lignes de production, presses, convoyeurs et solutions clé-en-main.",
     category: "machines",
     href: "/products#machines"
   },
   {
     title: "Matières premières",
-    icon: "📦",
-    description: "Acier, plastique, textiles et autres matériaux industriels.",
+    description: "Acier, plastique, textiles et matériaux composites de qualité.",
     category: "raw",
     href: "/products#raw"
   },
   {
     title: "Équipements agricoles",
-    icon: "🌱",
-    description: "Serres, systèmes d'irrigation et matériels agricoles.",
+    description: "Tracteurs, serres modernes et systèmes hydroponiques innovants.",
     category: "agri",
     href: "/products#agri"
   },
   {
     title: "Services à l’export",
-    icon: "🚢",
-    description: "Transit, douane, logistique et accompagnement export.",
+    description: "Transit, douane, logistique et accompagnement commercial.",
     category: "services",
     href: "/products#services"
   }

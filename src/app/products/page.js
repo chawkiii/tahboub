@@ -2,7 +2,7 @@
 // Page: Liste des produits (catalogue complet)
 
 import Section from "../../components/sections/Section";
-import ProductCardRotating from "../../components/ui/ProductCard";
+import ProductCard from "../../components/ui/ProductCard";
 import { products, productsPreview } from "../../data/products";
 import "../../styles/cards.css";
 
@@ -33,7 +33,7 @@ export default function ProductsPage() {
 
               <ul className="products-grid">
                 {categoryProducts.map((product, i) => (
-                  <ProductCardRotating
+                  <ProductCard
                     key={i}
                     title={product.title}
                     images={product.images} // tableau d’images (tu peux gérer 1 ou plusieurs dans ta Card)
