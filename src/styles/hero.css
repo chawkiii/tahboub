@@ -47,3 +47,10 @@
 .dot.active {
   background: #fff;
 }
+
+/* mobile fix */
+@media (max-width: 768px) {
+  .hero {
+    background-attachment: scroll; /* pas de parallax */
+  }
+}

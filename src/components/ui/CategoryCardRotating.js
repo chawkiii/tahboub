@@ -3,7 +3,6 @@
 
 import { useState, useEffect } from "react";
 import { productImages } from "@/data/products";
-import Image from "next/image";
 
 export default function CategoryCardRotating({
   title,
@@ -43,46 +42,46 @@ export default function CategoryCardRotating({
   if (!images.length) {
     return (
       <li className="product-card">
-        <div className="card-image" />
-        <div className="card-body">
-          <h3 className="card-title">{title}</h3>
-          <p className="card-desc">{description}</p>
+        
+          <div className="card-image" />
+          <div className="card-body">
+            <h3 className="card-title">{title}</h3>
+            <p className="card-desc">{description}</p>
           <a href={href}>
             <span className="card-button">Découvrir</span>
           </a>
-        </div>
+          </div>
+        
       </li>
     );
   }
 
   return (
     <li className="product-card">
-      <div className="card-image">
-        {images.map((src, i) => (
-          <div
-            key={src}
-            className={`card-img ${i === current ? "active" : ""}`}
-            aria-hidden={i === current ? "false" : "true"}
-          >
-            <Image
-              src={src}
-              alt={title}
-              fill
-              style={{ objectFit: "contain" }} // ✅ garde toute l’image visible
-              sizes="(max-width: 600px) 100vw, 300px"
-              priority={i === current} // charge plus vite l’image visible
+      
+        <div className="card-image">
+          {images.map((src, i) => (
+            <div
+              key={src}
+              className={`card-img ${i === current ? "active" : ""}`}
+              style={{
+                backgroundImage: `url(${src})`,
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
+              aria-hidden={i === current ? "false" : "true"}
             />
-          </div>
-        ))}
-      </div>
+          ))}
+        </div>
 
-      <div className="card-body">
-        <h3 className="card-title">{title}</h3>
-        <p className="card-desc">{description}</p>
-        <a href={href}>
+        <div className="card-body">
+          <h3 className="card-title">{title}</h3>
+          <p className="card-desc">{description}</p>
+          <a href={href}>
           <span className="card-button">Découvrir</span>
-        </a>
-      </div>
+          </a>
+        </div>
+      
     </li>
   );
 }
