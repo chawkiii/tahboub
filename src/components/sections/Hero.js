@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { heroSlides } from "../../data/hero";
 import "../../styles/hero.css";
 
@@ -17,7 +18,7 @@ export default function Hero() {
   }, []);
 
   useEffect(() => {
-    const handleScroll = () => setOffsetY(window.scrollY * 0.5); // vitesse réduite
+    const handleScroll = () => setOffsetY(window.scrollY * 0.5);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
@@ -26,11 +27,17 @@ export default function Hero() {
     <section className="hero">
       <div
         className="hero-bg"
-        style={{
-          backgroundImage: `url(${heroSlides[current].image})`,
-          transform: `translateY(${offsetY}px)`,
-        }}
-      />
+        style={{ transform: `translateY(${offsetY}px)` }}
+      >
+        <Image
+          src={heroSlides[current].image}
+          alt={heroSlides[current].title}
+          fill
+          priority
+          sizes="100vw"
+          style={{ objectFit: "cover" }}
+        />
+      </div>
       <div className="hero-content">
         <h1>{heroSlides[current].title}</h1>
         <p>{heroSlides[current].text}</p>

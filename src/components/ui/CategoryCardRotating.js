@@ -2,6 +2,7 @@
 "use client";
 
 import { useState, useEffect } from "react";
+import Image from "next/image";
 import { productImages } from "@/data/products";
 
 export default function CategoryCardRotating({
@@ -13,7 +14,6 @@ export default function CategoryCardRotating({
   const images = productImages[category] || [];
   const [current, setCurrent] = useState(0);
 
-  // au montage → choisir un index random stable côté client
   useEffect(() => {
     if (images.length > 0) {
       const initial = Math.floor(Math.random() * images.length);
@@ -21,7 +21,6 @@ export default function CategoryCardRotating({
     }
   }, [images]);
 
-  // rotation toutes les 10s
   useEffect(() => {
     if (images.length <= 1) return;
 
@@ -38,50 +37,49 @@ export default function CategoryCardRotating({
     return () => clearInterval(id);
   }, [images]);
 
-  // placeholder si pas d'image
   if (!images.length) {
     return (
       <li className="product-card">
-        
-          <div className="card-image" />
-          <div className="card-body">
-            <h3 className="card-title">{title}</h3>
-            <p className="card-desc">{description}</p>
+        <div className="card-image" />
+        <div className="card-body">
+          <h3 className="card-title">{title}</h3>
+          <p className="card-desc">{description}</p>
           <a href={href}>
             <span className="card-button">Découvrir</span>
           </a>
-          </div>
-        
+        </div>
       </li>
     );
   }
 
   return (
     <li className="product-card">
-      
-        <div className="card-image">
-          {images.map((src, i) => (
-            <div
-              key={src}
-              className={`card-img ${i === current ? "active" : ""}`}
-              style={{
-                backgroundImage: `url(${src})`,
-                backgroundSize: "cover",
-                backgroundPosition: "center",
-              }}
-              aria-hidden={i === current ? "false" : "true"}
+      <div className="card-image">
+        {images.map((src, i) => (
+          <div
+            key={src}
+            className={`card-img ${i === current ? "active" : ""}`}
+          >
+            <Image
+              src={src}
+              alt={title}
+              fill
+              sizes="(max-width: 768px) 100vw, 300px"
+              quality={70}
+              priority={i === current}
+              style={{ objectFit: "cover" }}
             />
-          ))}
-        </div>
+          </div>
+        ))}
+      </div>
 
-        <div className="card-body">
-          <h3 className="card-title">{title}</h3>
-          <p className="card-desc">{description}</p>
-          <a href={href}>
+      <div className="card-body">
+        <h3 className="card-title">{title}</h3>
+        <p className="card-desc">{description}</p>
+        <a href={href}>
           <span className="card-button">Découvrir</span>
-          </a>
-        </div>
-      
+        </a>
+      </div>
     </li>
   );
 }
