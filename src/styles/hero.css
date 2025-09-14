@@ -1,3 +1,5 @@
+/* src/styles/hero.css */
+
 .hero {
   position: relative;
   height: calc(100vh - var(--nav-h)*2 - var(--footer-h));

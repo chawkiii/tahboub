@@ -42,7 +42,6 @@ export default function Nav() {
           <ul className="nav-links">
             <li><Link href="/" onClick={() => setOpen(false)}>Accueil</Link></li>
             <li><Link href="/products" onClick={() => setOpen(false)}>Produits</Link></li>
-            <li><Link href="/services" onClick={() => setOpen(false)}>Services</Link></li>
             <li><Link href="/about" onClick={() => setOpen(false)}>À propos</Link></li>
             <li><Link href="/contact" onClick={() => setOpen(false)}>Contact</Link></li>
           </ul>
